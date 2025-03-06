@@ -1,4 +1,11 @@
 [build]
-command = "npm run build"
+command = "npm run build && npm run pages:build"
 [build.environment]
 NODE_VERSION = "20.0.0"
+
+[pages]
+framework = "nextjs"
+pages_build_output_dir = ".vercel/output/static"
+
+[build.upload]
+format = "service-worker"

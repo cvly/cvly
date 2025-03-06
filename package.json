@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "pages:build": "npx @cloudflare/next-on-pages@1",
     "build": "next build",
+    "pages:build": "npx @cloudflare/next-on-pages@1",
     "start": "next start -p 8788",
     "lint": "next lint"
   },
