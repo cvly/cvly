@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import ProfileCard from "./components/ProfileCard";
 import StickyMenu from "./components/Menu";
+import Link from "next/link";
 
 export const runtime = 'edge';
 
@@ -301,17 +302,15 @@ export default function Profile() {
     </div>
   
     {/* Made with Cvly Tag */}
-    <div className="fixed bottom-4 right-4 flex items-center space-x-2 bg-white rounded-lg shadow-md p-2">
-    <Image
-       src="Cvly.svg"  // Replace with the path to your Cvly icon
+    <Link href="/" className="fixed bottom-4 right-4 flex items-center space-x-2 bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow">
+      <Image
+        src="/Cvly.svg"
         alt="Cvly Icon"
-        width={20} height={20}
-        
+        width={20}
+        height={20}
       />
       <span className="text-sm text-gray-900">Made in <span className="font-semibold">Cvly.me</span></span>
-    </div>
+    </Link>
   </div>
-
-
   );
 }

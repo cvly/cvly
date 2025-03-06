@@ -26,13 +26,13 @@ export const metadata: Metadata = {
       "Build your professional portfolio free with Cvly.me. Simple easy-to-use editor, SEO-friendly templates, and instant publishing. Showcase your work effortlessly.",
     images: [
       {
-        url: "/og-image.png", // Path to your OG image in the public directory
+        url: "/images/og-image.png", // Path to your OG image in the public directory
         width: 1200,
         height: 630,
         alt: "Cyly - Free Portfolio Website Builder",
       },
     ],
-    siteName: "Cyly",
+    siteName: "Cvly",
     type: "website",
     url: "https://cvly.me", // Replace with your actual website URL
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Cyly - Free Portfolio Website Builder",
     description:
       "Build your professional portfolio free with Cvly.me. Simple easy-to-use editor, SEO-friendly templates, and instant publishing. Showcase your work effortlessly.",
-    images: ["/og-image.png"], // Path to your OG image in the public directory
+    images: ["/images/og-image.png"], // Path to your OG image in the public directory
   },
 };
 

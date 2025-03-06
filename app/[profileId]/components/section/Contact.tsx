@@ -22,7 +22,7 @@ const Contact: FC<{ profile: any }> = ({ profile }) => {
   ].filter(link => link.value); // Remove empty values
 
   return (
-    <div id="contact" className="section w-full flex flex-col md:flex-row items-start md:px-5 md:py-5 md:gap-20">
+    <div id="contact" className="section w-full flex flex-col md:flex-row items-start md:px-5 md:py-5 pb-24 md:gap-20">
       {/* Title */}
       <h2 className="text-gray-500 text-sm mb-4">Contact</h2>
 

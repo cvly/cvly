@@ -22,7 +22,7 @@ export default function Features() {
         {features.map((feature, index) => (
           <li 
             key={index}
-            className="flex items-center md:gap-3 gap-1 text-muted-foreground"
+            className="flex items-center md:gap-3 gap-1 text-muted-foreground pl-8 md:pl-0"
           >
             <span className="text-primary">{feature.icon}</span>
             {feature.text}

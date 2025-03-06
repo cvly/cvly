@@ -19,7 +19,7 @@ interface ProfileCardProps {
 
 const ProfileCard = ({ profile }: ProfileCardProps) => {
   return (
-    <div className="max-w-2xl md:p-2 md:p-1 text-center relative">
+    <div className="max-w-2xl md:p-2 md:p-1 text-center relative mt-8 md:mt-12">
       {/* Profile Photo */}
       <div className="flex items-center relative">
         <div className="flex justify-center mr-4 md:mr-6 relative">

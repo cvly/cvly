@@ -108,7 +108,7 @@ export default function Home() {
                 className={`relative overflow-hidden h-12 w-full lg:w-[343px] ${
                   showThankYou 
                     ? 'bg-white text-primary hover:bg-white/90 border border-primary' 
-                    : 'bg-primary text-white hover:bg-primary/90'
+                    : 'bg-primary text-white hover:bg-[#0658FD]'
                 }`}
                 onClick={() => setDialogOpen(true)}
               >

@@ -18,7 +18,7 @@ const Gallery: FC<{ profile: any }> = ({ profile }) => {
       {/* Scrollable Image Container */}
       <div className="flex md:gap-4 gap-2 overflow-x-auto custom-scrollbar">
         {profile.gallery.map((src: string, index: number) => (
-          <Image width={22}
+          <Image width={220}
           height={40}
             key={index}
             src={src}
