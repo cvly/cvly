@@ -6,6 +6,7 @@ const nextConfig = {
     unoptimized: true,
     domains: ['cvly.me'],
   },
+  // Removing previous output and distDir configurations as we'll use Cloudflare's approach
 }
 
 module.exports = nextConfig

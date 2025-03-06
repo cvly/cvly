@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "pages:build": "npx @cloudflare/next-on-pages@1",
     "build": "next build",
     "start": "next start -p 8788",
     "lint": "next lint"
@@ -29,6 +30,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.8",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20.17.16",
     "@types/react": "^19.0.8",

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-
-
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cvly.me'),
   title: "Cyly - Free Portfolio Website Builder",
   description:
     "Build your professional portfolio free with Cvly.me. Simple easy-to-use editor, SEO-friendly templates, and instant publishing. Showcase your work effortlessly.",

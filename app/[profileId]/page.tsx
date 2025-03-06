@@ -5,6 +5,8 @@ import { useParams } from "next/navigation";
 import ProfileCard from "./components/ProfileCard";
 import StickyMenu from "./components/Menu";
 
+export const runtime = 'edge';
+
 const profiles: Record<string, any> = {
   sushma: {
     name: "Sushma Koteswari Marri",
