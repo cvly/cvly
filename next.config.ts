@@ -1,10 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: 'export',
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  trailingSlash: true,
   images: {
     unoptimized: true,
+    domains: ['cvly.me'],
   },
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig
