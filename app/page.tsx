@@ -69,7 +69,7 @@ export default function Home() {
   variants={fadeInUpVariants}
 >
   <DotLottieReact
-    src="https://lottie.host/326ed145-48c0-4a03-8b09-67d2188cceca/oYR3wLZExc.lottie"
+    src="https://lottie.host/958e4124-a211-4331-9337-2af1fd9c7c14/ZkguB8xRva.lottie"
     loop
     autoplay
     style={{ width: '150%', height: '150%', marginLeft: '-25%' }}
