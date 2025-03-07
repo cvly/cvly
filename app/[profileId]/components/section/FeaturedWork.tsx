@@ -9,7 +9,7 @@ const FeaturedWork = ({ profile }: { profile: any }) => {
   }
 
   return (
-    <div id="featured-work" className="section relative flex flex-col items-start md:px-5">
+    <div id="featured-work" className="section relative flex flex-col items-start md:px-5 mb-6">
       <p className="text-[#8E8E93] text-sm mb-6">Featured works</p>
 
       <div className="relative w-full overflow-hidden">

@@ -11,15 +11,15 @@ const Gallery: FC<{ profile: any }> = ({ profile }) => {
   }
 
   return (
-    <div id="gallery" className="section w-full md:px-5">
+    <div id="gallery" className="section w-full md:px-5 mb-6">
       {/* Title */}
       <h2 className="text-[#676769] text-sm mb-4">Gallery</h2>
 
       {/* Scrollable Image Container */}
       <div className="flex md:gap-4 gap-2 overflow-x-auto custom-scrollbar">
         {profile.gallery.map((src: string, index: number) => (
-          <Image width={220}
-          height={40}
+          <Image width={240}
+          height={60}
             key={index}
             src={src}
             alt={`Gallery Image ${index + 1}`}

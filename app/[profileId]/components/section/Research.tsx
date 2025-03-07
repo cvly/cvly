@@ -10,7 +10,7 @@ const Research: FC<{ profile: any }> = ({ profile }) => {
   }
 
   return (
-    <div id="research" className="section relative flex flex-col md:flex-row items-start md:px-5 w-full md:gap-20">
+    <div id="research" className="section relative flex flex-col md:flex-row items-start md:px-5 w-full md:gap-20 mb-6">
       {/* Title */}
       <div>
         <p className="text-[#676769] text-sm md:mb-6 pt-5">Research</p>

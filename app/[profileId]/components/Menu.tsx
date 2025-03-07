@@ -86,28 +86,39 @@ const sectionComponents: Record<string, SectionComponent> = {
 const StickyMenu: React.FC<StickyMenuProps> = ({ profile }) => {
   const [activeSection, setActiveSection] = useState("featured work");
   const [underlineStyle, setUnderlineStyle] = useState({ left: "0px", width: "0px" });
-  const [lastScrollTop, setLastScrollTop] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const updateUnderline = useCallback(() => {
     const activeItem = document.getElementById(`${activeSection}-menu`);
-    if (activeItem) {
+    if (activeItem && menuRef.current) {
+      const menuRect = menuRef.current.getBoundingClientRect();
+      const itemRect = activeItem.getBoundingClientRect();
+      
+      // Calculate the center position for the menu item
+      const scrollLeft = menuRef.current.scrollLeft;
+      const centerOffset = (menuRect.width - itemRect.width) / 2;
+      const itemOffset = itemRect.left - menuRect.left + scrollLeft;
+      
+      // Smooth scroll to center the active item
+      menuRef.current.scrollTo({
+        left: itemOffset - centerOffset,
+        behavior: 'smooth'
+      });
+
       setUnderlineStyle({
         left: `${activeItem.offsetLeft}px`,
         width: `${activeItem.offsetWidth}px`,
       });
-
-      if (activeSection !== "featured work") {
-        activeItem.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
     }
   }, [activeSection]);
 
   useEffect(() => {
     const sectionsList = document.querySelectorAll(".section");
+    let isScrolling: NodeJS.Timeout;
 
     const onScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      // Clear the previous timeout
+      clearTimeout(isScrolling);
 
       sectionsList.forEach((section) => {
         const rect = section.getBoundingClientRect();
@@ -116,22 +127,20 @@ const StickyMenu: React.FC<StickyMenuProps> = ({ profile }) => {
         }
       });
 
-      if (menuRef.current) {
-        if (scrollTop > lastScrollTop) {
-          menuRef.current.scrollBy({ left: 40, behavior: "smooth" });
-        } else {
-          menuRef.current.scrollBy({ left: -40, behavior: "smooth" });
-        }
-      }
-
-      setLastScrollTop(scrollTop);
+      // Set a new timeout to run after scrolling ends
+      isScrolling = setTimeout(() => {
+        updateUnderline();
+      }, 100);
     };
 
     window.addEventListener("scroll", onScroll);
     updateUnderline();
 
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [activeSection, lastScrollTop, updateUnderline]);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(isScrolling);
+    };
+  }, [updateUnderline]);
 
   useEffect(() => {
     updateUnderline();
@@ -141,25 +150,29 @@ const StickyMenu: React.FC<StickyMenuProps> = ({ profile }) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setActiveSection(id);
   };
+
   return (
     <div>
       {/* Sticky Menu */}
       <div className="sticky top-0 bg-white z-10">
-        <div ref={menuRef} className="overflow-x-auto whitespace-nowrap custom-scrollbar flex">
-          <ul className="relative flex gap-6 w-max md:w-full md:justify-between md:px-4 md:px-0 pb-1 pt-5 text-sm md:text-base">
+        <div 
+          ref={menuRef} 
+          className="overflow-x-auto whitespace-nowrap custom-scrollbar scroll-smooth flex"
+        >
+          <ul className="relative flex gap-6 w-max md:w-full md:justify-between pb-1 pt-5 text-sm md:text-base pl-3 md:pl-1">
             {sections.map((id) => (
               <li
                 key={id}
                 id={`${id}-menu`}
-                className={`menu-item relative cursor-pointer pb-2 transition-colors duration-300 
-                  ${activeSection === id ? "text-gray-800 font-semibold" : "text-gray-500"}`}
+                className={`menu-item relative cursor-pointer pb-2 transition-all duration-300 hover:text-gray-800
+                  ${activeSection === id ? "text-gray-800 font-semibold scale-105" : "text-gray-500"}`}
                 onClick={() => handleMenuClick(id)}
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </li>
             ))}
             <span
-              className="absolute bottom-0 h-[2px] bg-gray-800 transition-all duration-500 ease-in-out"
+              className="absolute bottom-0 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"
               style={{ left: underlineStyle.left, width: underlineStyle.width }}
             />
           </ul>

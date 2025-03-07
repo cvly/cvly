@@ -10,7 +10,7 @@ const SkillsSection: FC<{ profile: any }> = ({ profile }) => {
   }
 
   return (
-    <div id="skills" className="section relative flex flex-col md:pt-10 md:px-5 w-full">
+    <div id="skills" className="section relative flex flex-col md:pt-10 md:px-5 w-full mb-6">
       {/* Title */}
       <p className="text-[#676769] text-sm md:mb-2 pb-5">Expertise</p>
       {/* Skills List */}

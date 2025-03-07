@@ -10,8 +10,8 @@ const More: FC<{ profile: any }> = ({ profile }) => {
   }
 
   return (
-    <div id="more" className="section flex flex-col gap-10 md:flex-row md:gap-24 pt-5 md:px-5 text-start">
-      <p className="text-sm text-gray-400">More</p>
+    <div id="more" className="section flex flex-col gap-10 md:flex-row md:gap-24 md:px-5 text-start mb-6">
+      <p className="text-sm text-gray-400 pt-5">More</p>
       {profile.more.map((info: any, index: number) => (
         <div key={index} className="max-w-2xl mx-auto">
           <p className="text-sm font-medium text-gray-900 pb-3">{info.main}</p>

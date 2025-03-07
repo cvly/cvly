@@ -11,7 +11,7 @@ const Recommendations: FC<{ profile: any }> = ({ profile }) => {
   }
 
   return (
-    <div id="recommendations" className="section flex flex-col md:flex-row items-start md:px-5 w-full">
+    <div id="recommendations" className="section flex flex-col md:flex-row items-start md:px-5 w-full mb-6">
       {/* Title */}
       <h2 className="text-[#676769] text-sm mb-6 pt-5">What people say</h2>
 

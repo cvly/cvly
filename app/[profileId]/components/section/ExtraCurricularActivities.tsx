@@ -10,7 +10,7 @@ const ExtraCuricularActivities: FC<{ profile: any }> = ({ profile }) => {
   }
 
   return (
-    <div id="extra-activities" className="section relative flex flex-col md:flex-row items-start md:px-5 w-full md:gap-0">
+    <div id="extra-activities" className="section relative flex flex-col md:flex-row items-start md:px-5 w-full md:gap-0 mb-6">
       {/* Title */}
       <div>
         <p className="text-[#676769] text-sm md:mb-6 md:pt-5">Extracurricular Activities</p>

@@ -49,10 +49,23 @@ h1, h2, h3 {
 .custom-scrollbar {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer/Edge */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
 }
 
 .custom-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+
+/* Smooth scroll snap */
+.menu-item {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  transition: transform 0.2s ease-out;
+}
+
+.menu-item:hover {
+  transform: translateY(-1px);
 }
 
 
