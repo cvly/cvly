@@ -7,6 +7,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import Features from "@/components/Features";
 import Navbar from "@/components/Navbar";
 import TallyDialog from "@/components/TallyDialog";
+import Link from 'next/link';
 
 // Animation variants for consistent animations
 const fadeInUpVariants = {
@@ -29,12 +30,16 @@ const AvatarGroup = memo(() => (
     <Avatar className="border-2 border-background">
       <AvatarImage src="/images/avatar-1.png" alt="User avatar" />
     </Avatar>
-    <Avatar className="border-2 border-background">
-      <AvatarImage src="/images/avatar-2.png" alt="User avatar" />
-    </Avatar>
-    <Avatar className="border-2 border-background">
-      <AvatarImage src="/images/avatar-3.png" alt="User avatar" />
-    </Avatar>
+    <Link href="/sushma" className="transition-transform hover:scale-110 hover:z-10">
+      <Avatar className="border-2 border-background">
+        <AvatarImage src="/images/avatar-2.png" alt="Sushma's avatar" />
+      </Avatar>
+    </Link>
+    <Link href="/shaheer" className="transition-transform hover:scale-110 hover:z-10">
+      <Avatar className="border-2 border-background">
+        <AvatarImage src="/images/avatar-3.png" alt="Shaheer's avatar" />
+      </Avatar>
+    </Link>
   </motion.div>
 ));
 

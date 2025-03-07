@@ -81,7 +81,7 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
   
         {/* Menu Button */}
         <button className="bg-gray-200 text-black py-2 px-1 md:px-2 w-[8%] md:w-[5%] rounded-lg text-sm md:text-base">
-          :
+          ⫶
         </button>
       </div>
     </div>
