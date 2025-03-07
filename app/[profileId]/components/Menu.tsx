@@ -45,9 +45,8 @@ interface Profile {
     name: string;
     organization: string;
     date: string;
-  }[]; // ✅ FIXED: Changed from object to array
+  }[];
 }
-
 
 interface StickyMenuProps {
   profile: Profile;
@@ -63,6 +62,7 @@ const sections = [
   "extraCurricular",
   "recommendations",
   "gallery",
+  "contributions",
   "more",
   "contact",
 ];
@@ -79,6 +79,7 @@ const sectionComponents: Record<string, SectionComponent> = {
   extraCurricular: dynamic(() => import("./section/ExtraCurricularActivities"), { ssr: false }),
   recommendations: dynamic(() => import("./section/Recommendations"), { ssr: false }),
   gallery: dynamic(() => import("./section/Gallery"), { ssr: false }),
+  contributions: dynamic(() => import("./section/Contributions"), { ssr: false }),
   more: dynamic(() => import("./section/More"), { ssr: false }),
   contact: dynamic(() => import("./section/Contact"), { ssr: false }),
 };
@@ -195,6 +196,5 @@ const StickyMenu: React.FC<StickyMenuProps> = ({ profile }) => {
 };
 
 StickyMenu.displayName = "StickyMenu";
-
 
 export default StickyMenu;
