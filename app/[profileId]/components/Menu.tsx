@@ -46,6 +46,14 @@ interface Profile {
     organization: string;
     date: string;
   }[];
+  youtube?: {
+    videos: {
+      title: string;
+      thumbnail: string;
+      url: string;
+      publishedAt: string;
+    }[];
+  };
 }
 
 interface StickyMenuProps {
@@ -62,6 +70,7 @@ const sections = [
   "extraCurricular",
   "recommendations",
   "gallery",
+  "youtube",
   "contributions",
   "more",
   "contact",
@@ -79,6 +88,7 @@ const sectionComponents: Record<string, SectionComponent> = {
   extraCurricular: dynamic(() => import("./section/ExtraCurricularActivities"), { ssr: false }),
   recommendations: dynamic(() => import("./section/Recommendations"), { ssr: false }),
   gallery: dynamic(() => import("./section/Gallery"), { ssr: false }),
+  youtube: dynamic(() => import("./section/Youtube"), { ssr: false }),
   contributions: dynamic(() => import("./section/Contributions"), { ssr: false }),
   more: dynamic(() => import("./section/More"), { ssr: false }),
   contact: dynamic(() => import("./section/Contact"), { ssr: false }),

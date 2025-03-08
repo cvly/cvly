@@ -275,7 +275,29 @@ const profiles: Record<string, any> = {
         dribble:"https://dribbble.com/boringcuriosity",
         behance:"",
       }
-    ]
+    ],
+    youtube: {
+      videos: [
+        {
+          title: "Why I quit my job as a Senior Developer",
+          thumbnail: "https://i.ytimg.com/vi/video1/maxresdefault.jpg",
+          url: "https://www.youtube.com/watch?v=video1",
+          publishedAt: "2023-12-01",
+        },
+        {
+          title: "How to Build a SaaS Product",
+          thumbnail: "https://i.ytimg.com/vi/video2/maxresdefault.jpg",
+          url: "https://www.youtube.com/watch?v=video2", 
+          publishedAt: "2023-11-15",
+        },
+        {
+          title: "The Future of Web Development",
+          thumbnail: "https://i.ytimg.com/vi/video3/maxresdefault.jpg",
+          url: "https://www.youtube.com/watch?v=video3",
+          publishedAt: "2023-11-01", 
+        }
+      ]
+    }
   },
 };
 
